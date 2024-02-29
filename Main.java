@@ -79,16 +79,20 @@ public class Main {
 
 
     private static void viewAllRented(){
+        double sum = 0;
         if(!rentedVehicles.isEmpty()){
 
             System.out.println("Vehicles: ");
             for (Vehicle v : rentedVehicles){
                 v.displayDetails();
-
+                sum += v.calculateRentalCost();
             }
         }else{
             System.out.println("There are no Vehicles rented!!");
         }
+        System.out.println("\n====================");
+        System.out.println("The total sum of all rent: " + sum);
+        System.out.println("====================");
     }
 
     }
